@@ -1,0 +1,9 @@
+{
+  "name": "stealfce",
+  "main": "fce.js",
+  "version": "0.0.1",
+  "dependencies": {
+    "cheerio": "^0.17.0",
+    "request": "^2.36.0"
+  }
+}
