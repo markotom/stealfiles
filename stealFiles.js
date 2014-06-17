@@ -47,6 +47,7 @@ StealFiles.prototype.getLinks = function (callback) {
               if (extension && extension[0] && extension[0] === '.' + self.config.extension) {
                 self.pdflinks.push(gold[1]);
               }
+              self.pdflinks.push(decodeURIComponent(gold[1]));
             }
           }
 
