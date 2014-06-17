@@ -34,7 +34,7 @@ StealFiles.prototype.getLinks = function (callback) {
         // For each link
         links.forEach(function (link, n) {
           // Match the gold
-          var gold = $(link).attr('href').match(/q=(.*)&sa=/);
+          var gold = $(link).attr('href').match('((http|https|ftp)?:\/\/\.+.' + self.config.extension + ')');
 
           if(gold && gold[1]) {
             // Set filename
@@ -42,11 +42,6 @@ StealFiles.prototype.getLinks = function (callback) {
 
             // Only pdf files
             if(filename && filename[0]) {
-              var extension = filename[0].toLowerCase().match(/\.[0-9a-z]+$/i);
-
-              if (extension && extension[0] && extension[0] === '.' + self.config.extension) {
-                self.pdflinks.push(gold[1]);
-              }
               self.pdflinks.push(decodeURIComponent(gold[1]));
             }
           }
