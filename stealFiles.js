@@ -21,7 +21,7 @@ StealFiles.prototype.getLinks = function (callback) {
 
   var self = this;
 
-  request('http://www.google.com.mx/search?q=' + this.config.query + '&start=' + this.config.currentPage,
+  request('http://www.google.com.mx/search?q=' + this.config.query + '&start=' + this.config.currentPage + '&ie=UTF-8#filter=0',
     function (error, response, body) {
       if (!error && response.statusCode === 200) {
 
